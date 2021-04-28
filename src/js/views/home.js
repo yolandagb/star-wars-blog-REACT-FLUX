@@ -3,11 +3,11 @@ import rigoImage from "../../img/rigo-baby.jpg";
 import "../../styles/home.scss";
 import CharacterCard from "../component/container.js";
 import PlanetCard from "../component/planets.js";
+import VehiclesCard from "../component/vehicles.js";
 
 export const Home = () => (
 	<div className="main-page">
-		<h1 className="text mt-5-danger">
-			{" "}
+		<h1 className="header-characters">
 			<strong>Characters</strong>
 		</h1>
 		<p />
@@ -22,10 +22,31 @@ export const Home = () => (
 		</div>
 
 		<p />
-		<h1 className="planets">
+		<h1 className="header-planets">
 			<strong>Planets</strong>
 		</h1>
-		<PlanetCard />
-		<PlanetCard />
+		<div className="flex-container">
+			<PlanetCard />
+			<PlanetCard />
+			<PlanetCard />
+			<PlanetCard />
+			<PlanetCard />
+			<PlanetCard />
+		</div>
+
+		<p />
+		<h1 className="header-vehicles">
+			<strong>Vehicles</strong>
+		</h1>
+		<div className="flex-container">
+			<VehiclesCard />
+			<VehiclesCard />
+			<VehiclesCard />
+			<VehiclesCard />
+			<VehiclesCard />
+			<VehiclesCard />
+			<VehiclesCard />
+			<VehiclesCard />
+		</div>
 	</div>
 );

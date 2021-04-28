@@ -1,19 +1,17 @@
 import React from "react";
 import ReactDOM from "react-dom";
-import "../../styles/container.scss";
+//import "../../styles/container.scss";
 
-const CharacterCard = () => {
+const VehiclesCard = () => {
 	return (
 		<div className="card">
 			<img className="card-img-top" src="..." alt="..." />
 			<div className="card-body">
-				Holaaa
 				<p className="card-text">
 					Some quick example text to build on the card title and make up the bulk of the cards content.
-					<button className="btn btn.primary" />
 				</p>
 			</div>
 		</div>
 	);
 };
-export default CharacterCard;
+export default VehiclesCard;
