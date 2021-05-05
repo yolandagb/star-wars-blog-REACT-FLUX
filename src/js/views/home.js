@@ -7,7 +7,7 @@ import VehiclesCard from "../component/vehicles.js";
 
 export const Home = () => (
 	<div className="main-page">
-		<h1 className="header-characters">
+		<h1 className="header-characters text-danger">
 			<strong>Characters</strong>
 		</h1>
 		<p />
@@ -22,7 +22,7 @@ export const Home = () => (
 		</div>
 
 		<p />
-		<h1 className="header-planets">
+		<h1 className="header-planets text-danger">
 			<strong>Planets</strong>
 		</h1>
 		<div className="flex-container">
@@ -35,7 +35,7 @@ export const Home = () => (
 		</div>
 
 		<p />
-		<h1 className="header-vehicles">
+		<h1 className="header-vehicles text-danger">
 			<strong>Vehicles</strong>
 		</h1>
 		<div className="flex-container">

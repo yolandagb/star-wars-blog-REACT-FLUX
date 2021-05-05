@@ -1,19 +1,30 @@
 import React from "react";
 import ReactDOM from "react-dom";
 import "../../styles/container.scss";
+//import PropTypes from "prop-types";
 
 const CharacterCard = () => {
 	return (
 		<div className="card">
-			<img className="card-img-top" src="..." alt="..." />
+			<img
+				className="card-img-top"
+				src="https://th.bing.com/th/id/R1529e45fc2e573e16ce2b308426cd6b8?rik=VSwPAubPlgIBcg&pid=ImgRaw"
+				alt="..."
+			/>
 			<div className="card-body">
-				Holaaa
-				<p className="card-text">
-					Some quick example text to build on the card title and make up the bulk of the cards content.
-					<button className="btn btn.primary" />
-				</p>
+				<h5 className="card-title">Card title</h5>
+				<p className="card-text">INFORMACION DE LA API</p>
+				<a href="#" className="btn btn-primary">
+					Learn More!
+				</a>
 			</div>
 		</div>
 	);
 };
 export default CharacterCard;
+
+// CharacterCard.PropTypes = {
+// 	title: PropTypes.string,
+// 	text: PropTypes.string,
+// 	botton: PropTypes.string
+// };
