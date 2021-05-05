@@ -1,6 +1,7 @@
-import React from "react";
+import React, { useState, useEffect, useContext } from "react";
 import ReactDOM from "react-dom";
 import "../../styles/planets.scss";
+import { Link } from "react-router-dom";
 //import PropTypes from "proptypes";
 
 const PlanetsCard = () => {
@@ -14,9 +15,11 @@ const PlanetsCard = () => {
 			<div className="card-body">
 				<h5 className="card-title">Card title</h5>
 				<p className="card-text" />
-				<a href="#" className="btn btn-primary">
-					Learn More!
-				</a>
+				<Link to="/demo">
+					<a href="#" className="btn btn-primary">
+						Learn More!
+					</a>
+				</Link>
 			</div>
 		</div>
 	);

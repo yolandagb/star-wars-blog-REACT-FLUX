@@ -1,6 +1,7 @@
-import React from "react";
+import React, { useState, useEffect, useContext } from "react";
 import ReactDOM from "react-dom";
 import "../../styles/container.scss";
+import { Link } from "react-router-dom";
 //import PropTypes from "prop-types";
 
 const CharacterCard = () => {
@@ -14,9 +15,11 @@ const CharacterCard = () => {
 			<div className="card-body">
 				<h5 className="card-title">Card title</h5>
 				<p className="card-text">INFORMACION DE LA API</p>
-				<a href="#" className="btn btn-primary">
-					Learn More!
-				</a>
+				<Link to="/demo">
+					<a href="#" className="btn btn-primary">
+						Learn More!
+					</a>
+				</Link>
 			</div>
 		</div>
 	);
