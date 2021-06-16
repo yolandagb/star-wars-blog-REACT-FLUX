@@ -8,7 +8,7 @@ const CharacterCard = () => {
 	return (
 		<div className="card">
 			<img
-				className="card-img-top"
+				className="card-img-fluid-top"
 				src="https://th.bing.com/th/id/R1529e45fc2e573e16ce2b308426cd6b8?rik=VSwPAubPlgIBcg&pid=ImgRaw"
 				alt="..."
 			/>

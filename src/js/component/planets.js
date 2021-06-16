@@ -8,7 +8,7 @@ const PlanetsCard = () => {
 	return (
 		<div className="card">
 			<img
-				className="card-img-top"
+				className="card-img-fluid-top"
 				src="https://i.pinimg.com/originals/4b/88/4e/4b884edea212ebc4fd2f9dd7b31aadb0.jpg"
 				alt="Card image cap"
 			/>
