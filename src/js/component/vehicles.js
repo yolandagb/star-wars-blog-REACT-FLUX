@@ -1,6 +1,8 @@
 import React, { useState, useEffect, useContext } from "react";
 import ReactDOM from "react-dom";
 import { Link } from "react-router-dom";
+import HeartButton from "./heartBtn.js";
+
 //import "../../styles/container.scss";
 //import PropTypes from "prop-types";
 
@@ -20,6 +22,7 @@ const VehiclesCard = () => {
 						Learn More!
 					</a>
 				</Link>
+				<HeartButton />
 			</div>
 		</div>
 	);

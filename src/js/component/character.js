@@ -1,10 +1,17 @@
 import React, { useState, useEffect, useContext } from "react";
-import ReactDOM from "react-dom";
-import "../../styles/container.scss";
 import { Link } from "react-router-dom";
-//import PropTypes from "prop-types";
+import { Context } from "../store";
+import "../../styles/container.scss";
+import HeartButton from "./heartBtn.js";
+import PropTypes from "prop-types";
+import ReactDOM from "react-dom";
 
-const CharacterCard = () => {
+const CharacterCard = props => {
+	const { store, actions } = useContext(Context);
+
+	// useEffect(() => {
+	// 	actions.getPeople();
+	// }, []);
 	return (
 		<div className="card">
 			<img
@@ -13,21 +20,21 @@ const CharacterCard = () => {
 				alt="..."
 			/>
 			<div className="card-body">
-				<h5 className="card-title">Card title</h5>
-				<p className="card-text">INFORMACION DE LA API</p>
+				<h5 className="card-title" />
+				<p className="card-text" />
 				<Link to="/demo">
 					<a href="#" className="btn btn-primary">
 						Learn More!
 					</a>
 				</Link>
+				<HeartButton />
 			</div>
 		</div>
 	);
 };
 export default CharacterCard;
 
-// CharacterCard.PropTypes = {
-// 	title: PropTypes.string,
-// 	text: PropTypes.string,
-// 	botton: PropTypes.string
-// };
+CharacterCard.propTypes = {
+	title: PropTypes.string,
+	text: PropTypes.string
+};

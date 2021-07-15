@@ -2,6 +2,8 @@ import React, { useState, useEffect, useContext } from "react";
 import ReactDOM from "react-dom";
 import "../../styles/planets.scss";
 import { Link } from "react-router-dom";
+import HeartButton from "./heartBtn.js";
+
 //import PropTypes from "proptypes";
 
 const PlanetsCard = () => {
@@ -20,6 +22,7 @@ const PlanetsCard = () => {
 						Learn More!
 					</a>
 				</Link>
+				<HeartButton />
 			</div>
 		</div>
 	);

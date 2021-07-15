@@ -1,18 +1,7 @@
 const getState = ({ getStore, getActions, setStore }) => {
 	return {
 		store: {
-			home: [
-				{
-					title: "FIRST",
-					background: "white",
-					initial: "white"
-				},
-				{
-					title: "SECOND",
-					background: "white",
-					initial: "white"
-				}
-			]
+			people: []
 		},
 		actions: {
 			// Use getActions to call a function within a fuction
@@ -37,6 +26,22 @@ const getState = ({ getStore, getActions, setStore }) => {
 
 				//reset the global store
 				setStore({ demo: demo });
+			},
+			getPeople() {
+				const store = getStore();
+				if (store.people.length === 0) {
+					const endpoint = "https://swapi.dev/api/people/";
+					const config = {
+						method: "GET"
+					};
+					fetch(endpoint, config)
+						.then(response => {
+							return response.json();
+						})
+						.then(json => {
+							setStore({ people: json.results });
+						});
+				}
 			}
 		}
 	};

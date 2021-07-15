@@ -1,7 +1,7 @@
 import React from "react";
 import rigoImage from "../../img/rigo-baby.jpg";
 import "../../styles/home.scss";
-import CharacterCard from "../component/container.js";
+import CharacterCard from "../component/character.js";
 import PlanetCard from "../component/planets.js";
 import VehiclesCard from "../component/vehicles.js";
 
