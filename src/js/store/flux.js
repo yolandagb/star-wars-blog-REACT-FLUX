@@ -1,9 +1,45 @@
 const getState = ({ getStore, getActions, setStore }) => {
 	return {
 		store: {
-			people: []
+			people: [],
+			planets: [],
+			vehicles: []
 		},
 		actions: {
+			getPeople: data => {
+				const store = getStore();
+				const endpoint = "https://www.swapi.tech/api/people/";
+				const config = {
+					method: "GET"
+				};
+				fetch(endpoint, config)
+					.then(res => res.json())
+					.then(data => data)
+					.catch(err => err);
+			},
+			getPlanets: data => {
+				const store = getStore();
+				const endpoint = "https://www.swapi.tech/api/planets/";
+				const config = {
+					method: "GET"
+				};
+				fetch(endpoint, config)
+					.then(res => res.json())
+					.then(data => data)
+					.catch(err => err);
+			},
+			getVehicles: data => {
+				const store = getStore();
+				const endpoint = "https://www.swapi.tech/api/vehicles/";
+				const config = {
+					method: "GET"
+				};
+				fetch(endpoint, config)
+					.then(res => res.json())
+					.then(data => data)
+					.catch(err => err);
+			},
+
 			// Use getActions to call a function within a fuction
 			exampleFunction: () => {
 				getActions().changeColor(0, "green");
@@ -26,22 +62,6 @@ const getState = ({ getStore, getActions, setStore }) => {
 
 				//reset the global store
 				setStore({ demo: demo });
-			},
-			getPeople() {
-				const store = getStore();
-				if (store.people.length === 0) {
-					const endpoint = "https://swapi.dev/api/people/";
-					const config = {
-						method: "GET"
-					};
-					fetch(endpoint, config)
-						.then(response => {
-							return response.json();
-						})
-						.then(json => {
-							setStore({ people: json.results });
-						});
-				}
 			}
 		}
 	};

@@ -1,17 +1,18 @@
 import React, { useState, useEffect, useContext } from "react";
+import { Context } from "../store/appContext";
 import { Link } from "react-router-dom";
-import { Context } from "../store";
+import PropTypes from "prop-types";
 import "../../styles/container.scss";
 import HeartButton from "./heartBtn.js";
-import PropTypes from "prop-types";
 import ReactDOM from "react-dom";
 
 const CharacterCard = props => {
 	const { store, actions } = useContext(Context);
 
-	// useEffect(() => {
-	// 	actions.getPeople();
-	// }, []);
+	useEffect(() => {
+		actions.getPeople();
+	}, []);
+
 	return (
 		<div className="card">
 			<img
@@ -21,7 +22,21 @@ const CharacterCard = props => {
 			/>
 			<div className="card-body">
 				<h5 className="card-title" />
-				<p className="card-text" />
+				<p className="card-text">
+					<h5 className="card-title">{props.name}</h5>
+					<h5 className="card-title">
+						Gender:
+						{props.gender}
+					</h5>
+					<h5 className="card-title">
+						Hair color:
+						{props.hair_color}
+					</h5>
+					<h5 className="card-title">
+						Eye color:
+						{props.eye_color}
+					</h5>
+				</p>
 				<Link to="/demo">
 					<a href="#" className="btn btn-primary">
 						Learn More!
@@ -36,5 +51,8 @@ export default CharacterCard;
 
 CharacterCard.propTypes = {
 	title: PropTypes.string,
-	text: PropTypes.string
+	name: PropTypes.string,
+	gender: PropTypes.string,
+	hair_color: PropTypes.string,
+	eye_color: PropTypes.string
 };

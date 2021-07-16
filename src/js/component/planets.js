@@ -3,10 +3,9 @@ import ReactDOM from "react-dom";
 import "../../styles/planets.scss";
 import { Link } from "react-router-dom";
 import HeartButton from "./heartBtn.js";
+// import PropTypes from "proptypes";
 
-//import PropTypes from "proptypes";
-
-const PlanetsCard = () => {
+const PlanetsCard = props => {
 	return (
 		<div className="card">
 			<img
@@ -16,7 +15,10 @@ const PlanetsCard = () => {
 			/>
 			<div className="card-body">
 				<h5 className="card-title">Card title</h5>
-				<p className="card-text" />
+				<p className="card-text">
+					<h5 className="card-title">Population:</h5>
+					<h5 className="card-title">Terrain:</h5>
+				</p>
 				<Link to="/demo">
 					<a href="#" className="btn btn-primary">
 						Learn More!
@@ -29,4 +31,8 @@ const PlanetsCard = () => {
 };
 export default PlanetsCard;
 
-//PlanetsCard.PropTypes{}
+// PalnetsCard.propTypes = {
+// 	title: PropTypes.string,
+// 	population: PropTypes.string,
+// 	terrain: PropTypes.string
+// };

@@ -6,7 +6,7 @@ import HeartButton from "./heartBtn.js";
 //import "../../styles/container.scss";
 //import PropTypes from "prop-types";
 
-const VehiclesCard = () => {
+const VehiclesCard = props => {
 	return (
 		<div className="card">
 			<img
@@ -16,6 +16,11 @@ const VehiclesCard = () => {
 			/>
 			<div className="card-body">
 				<h5 className="card-title">Card title</h5>
+				<p className="card-text">
+					<h5 className="card-title">Model:</h5>
+					<h5 className="card-title">Vehicle class:</h5>
+					<h5 className="card-title">Pilots:</h5>
+				</p>
 				<Link to="/demo">
 					<p className="card-text" />
 					<a href="#" className="btn btn-primary">
@@ -30,3 +35,9 @@ const VehiclesCard = () => {
 export default VehiclesCard;
 
 //En el boton de learn more tienes que hacer un Link, igual para el boton de corazón
+
+// PalnetsCard.propTypes = {
+// 	title: PropTypes.string,
+// 	population: PropTypes.string,
+// 	terrain: PropTypes.string
+// };
