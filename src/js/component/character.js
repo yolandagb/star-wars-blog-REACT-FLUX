@@ -9,10 +9,6 @@ import ReactDOM from "react-dom";
 const CharacterCard = props => {
 	const { store, actions } = useContext(Context);
 
-	useEffect(() => {
-		actions.getPeople();
-	}, []);
-
 	return (
 		<div className="card">
 			<img
@@ -23,19 +19,11 @@ const CharacterCard = props => {
 			<div className="card-body">
 				<h5 className="card-title" />
 				<p className="card-text">
-					<h5 className="card-title">{props.name}</h5>
-					<h5 className="card-title">
+					<h5 className="card-title">{props.title}</h5>
+					{/* <h5 className="card-title">
 						Gender:
-						{props.gender}
-					</h5>
-					<h5 className="card-title">
-						Hair color:
-						{props.hair_color}
-					</h5>
-					<h5 className="card-title">
-						Eye color:
-						{props.eye_color}
-					</h5>
+						{props.children}
+					</h5> */}
 				</p>
 				<Link to="/demo">
 					<a href="#" className="btn btn-primary">
@@ -50,9 +38,9 @@ const CharacterCard = props => {
 export default CharacterCard;
 
 CharacterCard.propTypes = {
-	title: PropTypes.string,
-	name: PropTypes.string,
-	gender: PropTypes.string,
-	hair_color: PropTypes.string,
-	eye_color: PropTypes.string
+	title: PropTypes.string
+	// name: PropTypes.string,
+	// gender: PropTypes.string,
+	// hair_color: PropTypes.string,
+	// eye_color: PropTypes.string
 };

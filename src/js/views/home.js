@@ -18,7 +18,10 @@ export const Home = () => {
 			</h1>
 			<p />
 			<div className="flex-container">
-				<CharacterCard />
+				{store.people.map((person, index) => {
+					return <CharacterCard key={index} title={person.name} />;
+				})}
+
 				<CharacterCard />
 				<CharacterCard />
 				<CharacterCard />

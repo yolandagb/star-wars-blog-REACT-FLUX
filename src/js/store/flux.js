@@ -14,7 +14,7 @@ const getState = ({ getStore, getActions, setStore }) => {
 				};
 				fetch(endpoint, config)
 					.then(res => res.json())
-					.then(data => data)
+					.then(data => setStore({ people: data.results }))
 					.catch(err => err);
 			},
 			getPlanets: data => {
