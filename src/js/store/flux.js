@@ -4,12 +4,12 @@ const getState = ({ getStore, getActions, setStore }) => {
 			people: [],
 			planets: [],
 			vehicles: [],
-			favourites: []
+			favourites: new Set([])
 		},
 		actions: {
 			getPeople: data => {
 				const store = getStore();
-				const endpoint = "https://www.swapi.tech/api/people/";
+				const endpoint = "https://swapi.dev/api/people/";
 				const config = {
 					method: "GET"
 				};
@@ -40,18 +40,21 @@ const getState = ({ getStore, getActions, setStore }) => {
 					.then(data => setStore({ vehicles: data.results }))
 					.catch(err => err);
 			},
-			getFavourite: data => {
+			getFavourites() {
 				const store = getStore();
-				// const endpoint = process.env.BACKEND_URL + "/api/users/outfits/favorite";
-				const config = {
-					method: "GET"
-				};
-				fetch(endpoint, config)
-					.then(res => res.json())
-					.then(json => {
-						setStore({ favourites: json });
-					})
-					.catch(err => err);
+				return [...store.favorites];
+			},
+
+			addFavourites(favourite_name) {
+				const store = getStore();
+				store.favourites.add(favourite_name);
+				setStore({ favourites: store.favourites });
+			},
+
+			deleteFavourites(favourite_name) {
+				const store = getStore();
+				store.favorites.delete(favorite_name);
+				setStore({ favorites: store.favorites });
 			},
 
 			// Use getActions to call a function within a fuction

@@ -1,38 +1,35 @@
-import React, { useState, useEffect, useContext } from "react";
-import { Context } from "../store/appContext";
+import React, { useContext, useState, useEffect } from "react";
 import { Link } from "react-router-dom";
-import PropTypes from "prop-types";
-import "../../styles/container.scss";
-import ReactDOM from "react-dom";
+import { Context } from "../store/index.js";
 
-export const FavDropdown = () => {
-	const { store, actions } = useContext(Context);
-	let favourite = [];
-	// useEffect(() => {
-	// 	actions.getCollections();
-	// }, []);
+export default function(props) {
 
-	if (store.favourites != undefined) {
-		favourites = store.favourites.map(index => {
-			return {
-				// label: category.name,
-				// value: category.id
-			};
-		});
-	}
+    const { store, actions } = useContext(Context);
+    
 
-	return (
-		<div className="btn-group">
-			<button
-				type="button"
-				className="btn btn-danger dropdown-toggle"
-				data-toggle="dropdown"
-				aria-haspopup="true"
-				aria-expanded="false">
-				Action
-			</button>
-		</div>
-	);
-};
+    // useEffect(()=> {
+    //     actions.getFavorites();
+    //     console.log('store.favorites desde favorites.js: ', store.favorites)
+    // },[store.favorites])
+    
 
-export default FavDropdown;
+    return (
+        <div className="dropdown">
+            <button className="btn btn-primary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                Favourites
+            </button>
+            <div className="dropdown-menu" aria-labelledby="dropdownMenuButton" >
+            {actions.getFavourites().map( (fav, index) =>  { 
+                return (
+                    <a className="dropdown-item" key={index} href="#">{fav}
+                        <button onClick={() => actions.deleteFavourites(fav)} type="button" className="close" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </a>
+                )
+            })
+            }     
+            </div>
+        </div>
+    )  
+}
