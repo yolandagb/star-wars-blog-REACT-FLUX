@@ -6,7 +6,7 @@ import "../../styles/container.scss";
 import HeartButton from "./heartBtn.js";
 import ReactDOM from "react-dom";
 
-const CharacterCard = props => {
+const GeneralCard = props => {
 	const { store, actions } = useContext(Context);
 
 	return (
@@ -35,9 +35,9 @@ const CharacterCard = props => {
 		</div>
 	);
 };
-export default CharacterCard;
+export default GeneralCard;
 
-CharacterCard.propTypes = {
+GeneralCard.propTypes = {
 	title: PropTypes.string
 	// name: PropTypes.string,
 	// gender: PropTypes.string,

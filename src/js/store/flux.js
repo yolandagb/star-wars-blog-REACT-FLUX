@@ -3,7 +3,8 @@ const getState = ({ getStore, getActions, setStore }) => {
 		store: {
 			people: [],
 			planets: [],
-			vehicles: []
+			vehicles: [],
+			favourites: []
 		},
 		actions: {
 			getPeople: data => {
@@ -25,7 +26,7 @@ const getState = ({ getStore, getActions, setStore }) => {
 				};
 				fetch(endpoint, config)
 					.then(res => res.json())
-					.then(data => data)
+					.then(data => setStore({ planets: data.results }))
 					.catch(err => err);
 			},
 			getVehicles: data => {
@@ -36,7 +37,20 @@ const getState = ({ getStore, getActions, setStore }) => {
 				};
 				fetch(endpoint, config)
 					.then(res => res.json())
-					.then(data => data)
+					.then(data => setStore({ vehicles: data.results }))
+					.catch(err => err);
+			},
+			getFavourite: data => {
+				const store = getStore();
+				// const endpoint = process.env.BACKEND_URL + "/api/users/outfits/favorite";
+				const config = {
+					method: "GET"
+				};
+				fetch(endpoint, config)
+					.then(res => res.json())
+					.then(json => {
+						setStore({ favourites: json });
+					})
 					.catch(err => err);
 			},
 

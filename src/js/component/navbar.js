@@ -1,5 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
+
 import "../../styles/navbar.scss";
 
 export const Navbar = () => {
@@ -14,11 +15,7 @@ export const Navbar = () => {
 					/>
 				</span>
 			</Link>
-			<div className="ml-auto">
-				<Link to="/demo">
-					<button className="btn btn-primary">Favourites</button>
-				</Link>
-			</div>
+			<div className="ml-auto" />
 		</nav>
 	);
 };

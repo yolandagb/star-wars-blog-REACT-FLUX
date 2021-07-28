@@ -1,14 +1,14 @@
 import React, { useState, useEffect, useContext } from "react";
 import { Context } from "../store/appContext";
 import "../../styles/home.scss";
-import CharacterCard from "../component/character";
-import PlanetCard from "../component/planets.js";
-import VehiclesCard from "../component/vehicles.js";
+import GeneralCard from "../component/Cards";
 
 export const Home = () => {
 	const { store, actions } = useContext(Context);
 	useEffect(() => {
 		actions.getPeople();
+		actions.getPlanets();
+		actions.getVehicles();
 	}, []);
 
 	return (
@@ -19,15 +19,8 @@ export const Home = () => {
 			<p />
 			<div className="flex-container">
 				{store.people.map((person, index) => {
-					return <CharacterCard key={index} title={person.name} />;
+					return <GeneralCard key={index} title={person.name} />;
 				})}
-
-				<CharacterCard />
-				<CharacterCard />
-				<CharacterCard />
-				<CharacterCard />
-				<CharacterCard />
-				<CharacterCard />
 			</div>
 
 			<p />
@@ -35,12 +28,9 @@ export const Home = () => {
 				<strong>Planets</strong>
 			</h1>
 			<div className="flex-container">
-				<PlanetCard />
-				<PlanetCard />
-				<PlanetCard />
-				<PlanetCard />
-				<PlanetCard />
-				<PlanetCard />
+				{store.planets.map((planet, index) => {
+					return <GeneralCard key={index} title={planet.name} />;
+				})}
 			</div>
 
 			<p />
@@ -48,14 +38,9 @@ export const Home = () => {
 				<strong>Vehicles</strong>
 			</h1>
 			<div className="flex-container">
-				<VehiclesCard />
-				<VehiclesCard />
-				<VehiclesCard />
-				<VehiclesCard />
-				<VehiclesCard />
-				<VehiclesCard />
-				<VehiclesCard />
-				<VehiclesCard />
+				{store.vehicles.map((vehicle, index) => {
+					return <GeneralCard key={index} title={vehicle.name} />;
+				})}
 			</div>
 		</div>
 	);
