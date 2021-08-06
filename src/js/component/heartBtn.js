@@ -1,5 +1,6 @@
 import React, { useState, useEffect, useContext } from "react";
 import ReactDOM from "react-dom";
+import { Context } from "../store/appContext";
 import { Link } from "react-router-dom";
 import PropTypes from "prop-types";
 
@@ -17,6 +18,6 @@ const HeartButton = props => {
 	);
 };
 export default HeartButton;
-GeneralCard.propTypes = {
+HeartButton.propTypes = {
 	name: PropTypes.string
 };

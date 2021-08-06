@@ -42,7 +42,7 @@ const getState = ({ getStore, getActions, setStore }) => {
 			},
 			getFavourites() {
 				const store = getStore();
-				return [...store.favorites];
+				return [...store.favourites];
 			},
 
 			addFavourites(favourite_name) {

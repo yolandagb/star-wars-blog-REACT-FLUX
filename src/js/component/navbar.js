@@ -1,6 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
-
+import { FavDropdown } from "../component/favDropdown.js";
 import "../../styles/navbar.scss";
 
 export const Navbar = () => {
@@ -16,6 +16,7 @@ export const Navbar = () => {
 				</span>
 			</Link>
 			<div className="ml-auto" />
+			<FavDropdown />
 		</nav>
 	);
 };
