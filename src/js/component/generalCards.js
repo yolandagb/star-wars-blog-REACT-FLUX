@@ -8,24 +8,25 @@ import ReactDOM from "react-dom";
 
 const GeneralCard = props => {
 	const { store, actions } = useContext(Context);
+	// let path = "/" + props.resource + "/" + props.id;
+	let imgRandom = Math.floor(Math.random() * 1000 + 1);
+	let pathImg = "https://picsum.photos/400/200?random=" + imgRandom;
 
 	return (
 		<div className="card">
-			<img
+			{/* <img
 				className="card-img-fluid-top"
 				src="https://th.bing.com/th/id/R1529e45fc2e573e16ce2b308426cd6b8?rik=VSwPAubPlgIBcg&pid=ImgRaw"
 				alt="..."
-			/>
+			/> */}
+			<img src={pathImg} className="card-img-top" alt="..." />
 			<div className="card-body">
 				<h5 className="card-title" />
 				<p className="card-text">
 					<h5 className="card-title">{props.title}</h5>
-					{/* <h5 className="card-title">
-						Gender:
-						{props.children}
-					</h5> */}
+					<h5 className="card-title">{props.children}</h5>
 				</p>
-				<Link to="/demo">
+				<Link to="/characters">
 					<a href="#" className="btn btn-primary">
 						Learn More!
 					</a>
@@ -38,7 +39,8 @@ const GeneralCard = props => {
 export default GeneralCard;
 
 GeneralCard.propTypes = {
-	title: PropTypes.string
+	title: PropTypes.string,
+	children: PropTypes.string
 	// name: PropTypes.string,
 	// gender: PropTypes.string,
 	// hair_color: PropTypes.string,
