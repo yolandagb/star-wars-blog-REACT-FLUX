@@ -5,7 +5,7 @@ const getState = ({ getStore, getActions, setStore }) => {
 			planets: [],
 			vehicles: [],
 			species: [],
-			favourites: new Set([])
+			favorites: []
 		},
 		actions: {
 			getPeople: data => {
@@ -52,21 +52,23 @@ const getState = ({ getStore, getActions, setStore }) => {
 					.then(data => setStore({ vehicles: data.results }))
 					.catch(err => err);
 			},
-			getFavourites() {
-				const store = getStore();
-				return [...store.favourites];
-			},
+			// getFavourites() {
+			// 	const store = getStore();
+			// 	return [...store.favourites];
+			// },
 
-			addFavourites(favourite_name) {
-				const store = getStore();
-				store.favourites.add(favourite_name);
-				setStore({ favourites: store.favourites });
-			},
-
-			deleteFavourites(favourite_name) {
-				const store = getStore();
-				store.favorites.delete(favorite_name);
+			addFavs: favorite => {
+				//get the store
+				let store = getStore(); //traes store disponible
+				store.favorites.push(favorite);
 				setStore({ favorites: store.favorites });
+			},
+			deleteFavs: favorite => {
+				let store = getStore();
+				let newStore = store.favorites.filter(element => element != favorite);
+				setStore({
+					favorites: newStore
+				});
 			},
 
 			// Use getActions to call a function within a fuction

@@ -8,16 +8,19 @@ const HeartButton = props => {
 	const { store, actions } = useContext(Context);
 
 	const handleClick = event => {
-		actions.addFavourites();
+		actions.addFavs();
 	};
-	//añadir a favorite via props ( en cards que es dondse se renderiza <Favorites />)
 	return (
-		<button onClick={handleClick} type="button" className="btn heart">
+		<button onClick={handleClick} type="button" className="btn btn-warning">
 			<i className="far fa-heart" />
 		</button>
 	);
 };
 export default HeartButton;
+
 HeartButton.propTypes = {
-	name: PropTypes.string
+	url: PropTypes.string,
+	uid: PropTypes.string,
+	name: PropTypes.string,
+	next: PropTypes.string
 };

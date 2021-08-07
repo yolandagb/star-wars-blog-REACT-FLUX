@@ -21,6 +21,9 @@ const GeneralCard = props => {
 					<h5 className="card-title">{props.title}</h5>
 					<h5 className="card-title">{props.children}</h5>
 				</p>
+				{/* <Link to={path} className="btn btn-outline-primary" id="button-info">
+					Learn More!
+				</Link> */}
 				<Link to="/characters">
 					<a href="#" className="btn btn-primary">
 						Learn More!
@@ -36,8 +39,4 @@ export default GeneralCard;
 GeneralCard.propTypes = {
 	title: PropTypes.string,
 	children: PropTypes.string
-	// name: PropTypes.string,
-	// gender: PropTypes.string,
-	// hair_color: PropTypes.string,
-	// eye_color: PropTypes.string
 };

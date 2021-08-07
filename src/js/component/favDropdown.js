@@ -5,13 +5,6 @@ import { Context } from "../store/appContext";
 export const FavDropdown = props => {
 	const { store, actions } = useContext(Context);
 
-	useEffect(
-		() => {
-			actions.getFavourites();
-		},
-		[store.favourites]
-	);
-
 	return (
 		<div className="dropdown">
 			<button
@@ -21,7 +14,7 @@ export const FavDropdown = props => {
 				data-toggle="dropdown"
 				aria-haspopup="true"
 				aria-expanded="false">
-				Favourites
+				<i className="fas fa-heart" />
 			</button>
 			<div className="dropdown-menu" aria-labelledby="dropdownMenuButton">
 				{/* {store.favourites.map((fav, index) => {
