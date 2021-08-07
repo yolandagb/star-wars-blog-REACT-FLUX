@@ -4,6 +4,7 @@ const getState = ({ getStore, getActions, setStore }) => {
 			people: [],
 			planets: [],
 			vehicles: [],
+			species: [],
 			favourites: new Set([])
 		},
 		actions: {
@@ -20,13 +21,24 @@ const getState = ({ getStore, getActions, setStore }) => {
 			},
 			getPlanets: data => {
 				const store = getStore();
-				const endpoint = "https://www.swapi.tech/api/planets/";
+				const endpoint = "https://swapi.dev/api/planets/";
 				const config = {
 					method: "GET"
 				};
 				fetch(endpoint, config)
 					.then(res => res.json())
 					.then(data => setStore({ planets: data.results }))
+					.catch(err => err);
+			},
+			getSpecies: data => {
+				const store = getStore();
+				const endpoint = "https://swapi.dev/api/species/";
+				const config = {
+					method: "GET"
+				};
+				fetch(endpoint, config)
+					.then(res => res.json())
+					.then(data => setStore({ species: data.results }))
 					.catch(err => err);
 			},
 			getVehicles: data => {

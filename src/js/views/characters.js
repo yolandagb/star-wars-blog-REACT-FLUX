@@ -1,10 +1,15 @@
-import React, { useState, useEffect, useContext } from "react";
+import React, { useState, useEffect, useContext, useParams } from "react";
 import { Link } from "react-router-dom";
 import { Context } from "../store/appContext";
+import PropTypes from "prop-types";
+
 import "../../styles/demo.scss";
 
-export const Characters = () => {
+const Characters = props => {
 	const { store, actions } = useContext(Context);
+	// useEffect(() => {
+	// 	actions.getPeople();
+	// }, []);
 
 	return (
 		<>
@@ -39,4 +44,12 @@ export const Characters = () => {
 			</div>
 		</>
 	);
+};
+export default Characters;
+
+Characters.propTypes = {
+	name: PropTypes.string,
+	gender: PropTypes.string,
+	hair_color: PropTypes.string,
+	eye_color: PropTypes.string
 };

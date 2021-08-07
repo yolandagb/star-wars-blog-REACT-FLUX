@@ -10,6 +10,7 @@ const Home = props => {
 		actions.getPeople();
 		actions.getPlanets();
 		actions.getVehicles();
+		actions.getSpecies();
 	}, []);
 
 	return (
@@ -36,17 +37,43 @@ const Home = props => {
 			</h1>
 			<div className="flex-container">
 				{store.planets.map((planet, index) => {
-					return <GeneralCard key={index} title={planet.name} />;
+					return (
+						<GeneralCard key={index} title={planet.name}>
+							<p className="card-text">Population: {planet.population}</p>
+							<p className="card-text">Terrain: {planet.terrain}</p>
+						</GeneralCard>
+					);
 				})}
 			</div>
 
+			<p />
+			<h1 className="header-vehicles text-danger">
+				<strong>Species</strong>
+			</h1>
+			<div className="flex-container">
+				{store.species.map((specie, index) => {
+					return (
+						<GeneralCard key={index} title={specie.name}>
+							<p className="card-text">Population: {specie.classification}</p>
+							<p className="card-text">Terrain: {specie.designation}</p>
+							<p className="card-text">Language: {specie.language}</p>
+						</GeneralCard>
+					);
+				})}
+			</div>
 			<p />
 			<h1 className="header-vehicles text-danger">
 				<strong>Vehicles</strong>
 			</h1>
 			<div className="flex-container">
 				{store.vehicles.map((vehicle, index) => {
-					return <GeneralCard key={index} title={vehicle.name} />;
+					return (
+						<GeneralCard key={index} title={vehicle.name}>
+							{/* <p className="card-text">Model: {vehicle.model}</p>
+							<p className="card-text">Vehicle class: {vehicle.vehicle_class}</p>
+							<p className="card-text">Pilot: {vehicle.pilot}</p> */}
+						</GeneralCard>
+					);
 				})}
 			</div>
 		</div>
@@ -58,5 +85,13 @@ Home.propTypes = {
 	name: PropTypes.string,
 	gender: PropTypes.string,
 	hair_color: PropTypes.string,
-	eye_color: PropTypes.string
+	eye_color: PropTypes.string,
+	population: PropTypes.string,
+	terrain: PropTypes.string,
+	classification: PropTypes.string,
+	designation: PropTypes.string,
+	language: PropTypes.string,
+	model: PropTypes.string,
+	vehicle_class: PropTypes.string,
+	pilots: PropTypes.array
 };
