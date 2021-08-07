@@ -2,7 +2,7 @@ import React, { useContext, useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import { Context } from "../store/appContext";
 
-export const FavDropdown = props => {
+const FavDropdown = props => {
 	const { store, actions } = useContext(Context);
 
 	return (
@@ -35,3 +35,4 @@ export const FavDropdown = props => {
 		</div>
 	);
 };
+export default FavDropdown;

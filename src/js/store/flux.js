@@ -2,9 +2,13 @@ const getState = ({ getStore, getActions, setStore }) => {
 	return {
 		store: {
 			people: [],
+			people2: [],
 			planets: [],
+			palnets2: [],
 			vehicles: [],
+			vehicles2: [],
 			species: [],
+			species2: [],
 			favorites: []
 		},
 		actions: {
@@ -17,6 +21,17 @@ const getState = ({ getStore, getActions, setStore }) => {
 				fetch(endpoint, config)
 					.then(res => res.json())
 					.then(data => setStore({ people: data.results }))
+					.catch(err => err);
+			},
+			getPeople2: data => {
+				const store = getStore();
+				const endpoint = "https://swapi.dev/api/people/:id/";
+				const config = {
+					method: "GET"
+				};
+				fetch(endpoint, config)
+					.then(resp => resp.json())
+					.then(data => setStore({ people2: data.results }))
 					.catch(err => err);
 			},
 			getPlanets: data => {
@@ -59,13 +74,13 @@ const getState = ({ getStore, getActions, setStore }) => {
 
 			addFavs: favorite => {
 				//get the store
-				let store = getStore(); //traes store disponible
+				const store = getStore();
 				store.favorites.push(favorite);
 				setStore({ favorites: store.favorites });
 			},
 			deleteFavs: favorite => {
-				let store = getStore();
-				let newStore = store.favorites.filter(element => element != favorite);
+				const store = getStore();
+				const newStore = store.favorites.filter(element => element != favorite);
 				setStore({
 					favorites: newStore
 				});

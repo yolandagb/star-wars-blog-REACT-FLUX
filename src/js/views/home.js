@@ -1,8 +1,11 @@
 import React, { useState, useEffect, useContext } from "react";
 import { Context } from "../store/appContext";
 import PropTypes from "prop-types";
+import { Link } from "react-router-dom";
 import "../../styles/home.scss";
-import GeneralCard from "../component/generalCards";
+import GeneralCard from "../component/generalCard";
+import LearnMoreBtn1 from "../component/learnMoreBtn1";
+import LearnMoreBtn2 from "../component/learnMoreBtn2";
 
 const Home = props => {
 	const { store, actions } = useContext(Context);
@@ -26,6 +29,7 @@ const Home = props => {
 							<p className="card-text">Gender: {person.gender}</p>
 							<p className="card-text">Eye color: {person.eye_color}</p>
 							<p className="card-text"> Hair color: {person.hair_color}</p>
+							<LearnMoreBtn1 />
 						</GeneralCard>
 					);
 				})}
@@ -41,6 +45,8 @@ const Home = props => {
 						<GeneralCard key={index} title={planet.name}>
 							<p className="card-text">Population: {planet.population}</p>
 							<p className="card-text">Terrain: {planet.terrain}</p>
+							<p className="card-text">Climate: {planet.climate}</p>
+							<LearnMoreBtn2 />
 						</GeneralCard>
 					);
 				})}
@@ -86,8 +92,10 @@ Home.propTypes = {
 	gender: PropTypes.string,
 	hair_color: PropTypes.string,
 	eye_color: PropTypes.string,
+	uid: PropTypes.string,
 	population: PropTypes.string,
 	terrain: PropTypes.string,
+	climate: PropTypes.string,
 	classification: PropTypes.string,
 	designation: PropTypes.string,
 	language: PropTypes.string,

@@ -10,25 +10,18 @@ const GeneralCard = props => {
 	const { store, actions } = useContext(Context);
 	// let path = "/" + props.resource + "/" + props.id;
 	let imgRandom = Math.floor(Math.random() * 1000 + 1);
-	let pathImg = "https://picsum.photos/400/200?random=" + imgRandom;
+	let pathImg =
+		"https://i0.wp.com/www.cinemundo.net.br/wp-content/uploads/2020/01/LUKE.jpg?fit=1280%2C960&ssl=1" + imgRandom;
 
 	return (
 		<div className="card">
-			<img src={pathImg} className="card-img-top" alt="..." />
+			<img src={pathImg} className="card-img-fluid" alt="..." />
 			<div className="card-body">
 				<h5 className="card-title" />
 				<p className="card-text">
 					<h5 className="card-title">{props.title}</h5>
 					<h5 className="card-title">{props.children}</h5>
 				</p>
-				{/* <Link to={path} className="btn btn-outline-primary" id="button-info">
-					Learn More!
-				</Link> */}
-				<Link to="/characters">
-					<a href="#" className="btn btn-primary">
-						Learn More!
-					</a>
-				</Link>
 				<HeartButton />
 			</div>
 		</div>
