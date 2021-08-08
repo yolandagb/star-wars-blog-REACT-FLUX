@@ -4,8 +4,6 @@ import PropTypes from "prop-types";
 import { Link } from "react-router-dom";
 import "../../styles/home.scss";
 import GeneralCard from "../component/generalCard";
-import LearnMoreBtn1 from "../component/learnMoreBtn1";
-import LearnMoreBtn2 from "../component/learnMoreBtn2";
 
 const Home = props => {
 	const { store, actions } = useContext(Context);
@@ -29,7 +27,16 @@ const Home = props => {
 							<p className="card-text">Gender: {person.gender}</p>
 							<p className="card-text">Eye color: {person.eye_color}</p>
 							<p className="card-text"> Hair color: {person.hair_color}</p>
-							<LearnMoreBtn1 />
+							<Link to="/characters" className="link_to">
+								<button className="btn btn-primary">Learn more</button>
+							</Link>{" "}
+							<Link>
+								<button
+									className="btn btn-outline-danger"
+									onClick={() => actions.setMyFavourites(person.name)}>
+									<i className="far fa-heart" />
+								</button>
+							</Link>
 						</GeneralCard>
 					);
 				})}
@@ -46,7 +53,16 @@ const Home = props => {
 							<p className="card-text">Population: {planet.population}</p>
 							<p className="card-text">Terrain: {planet.terrain}</p>
 							<p className="card-text">Climate: {planet.climate}</p>
-							<LearnMoreBtn2 />
+							<Link to="/planets" className="link_to">
+								<button className="btn btn-primary">Learn more</button>
+							</Link>{" "}
+							<Link>
+								<button
+									className="btn btn-outline-danger"
+									onClick={() => actions.setMyFavourites(planet.name)}>
+									<i className="far fa-heart" />
+								</button>
+							</Link>
 						</GeneralCard>
 					);
 				})}
@@ -63,6 +79,16 @@ const Home = props => {
 							<p className="card-text">Population: {specie.classification}</p>
 							<p className="card-text">Terrain: {specie.designation}</p>
 							<p className="card-text">Language: {specie.language}</p>
+							<Link to="/species" className="link_to">
+								<button className="btn btn-primary">Learn more</button>
+							</Link>{" "}
+							<Link>
+								<button
+									className="btn btn-outline-danger"
+									onClick={() => actions.setMyFavourites(specie.name)}>
+									<i className="far fa-heart" />
+								</button>
+							</Link>
 						</GeneralCard>
 					);
 				})}
@@ -75,9 +101,19 @@ const Home = props => {
 				{store.vehicles.map((vehicle, index) => {
 					return (
 						<GeneralCard key={index} title={vehicle.name}>
-							{/* <p className="card-text">Model: {vehicle.model}</p>
+							<p className="card-text">Model: {vehicle.model}</p>
 							<p className="card-text">Vehicle class: {vehicle.vehicle_class}</p>
-							<p className="card-text">Pilot: {vehicle.pilot}</p> */}
+							<p className="card-text">Crew: {vehicle.crew}</p>
+							<Link to="/vehicles" className="link_to">
+								<button className="btn btn-primary">Learn more</button>
+							</Link>{" "}
+							<Link>
+								<button
+									className="btn btn-outline-danger"
+									onClick={() => actions.setMyFavourites(vehicle.name)}>
+									<i className="far fa-heart" />
+								</button>
+							</Link>
 						</GeneralCard>
 					);
 				})}
@@ -101,5 +137,5 @@ Home.propTypes = {
 	language: PropTypes.string,
 	model: PropTypes.string,
 	vehicle_class: PropTypes.string,
-	pilots: PropTypes.array
+	crew: PropTypes.string
 };

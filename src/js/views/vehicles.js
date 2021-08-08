@@ -26,12 +26,12 @@ const Vehicles = props => {
 			</div>
 			<div className="divider bg-danger" />
 			<div className="row d-flex ml-5">
-				<div className="col-2 text-danger">Name: </div>
-				<div className="col-2 text-danger">Climate: </div>
-				<div className="col-2 text-danger">Population: </div>
-				<div className="col-2 text-danger">Orbital Period: </div>
-				<div className="col-2 text-danger">Rotation Period:</div>
-				<div className="col-2 text-danger">Diameter: </div>
+				{/* <div className="col-2 text-danger">Name: {specie.name}</div>
+				<div className="col-2 text-danger">Average Height: {specie.average_height}</div>
+				<div className="col-2 text-danger">Average Lifespan: {specie.average_lifespan}</div>
+				<div className="col-2 text-danger">Classification: {specie.classification}</div>
+				<div className="col-2 text-danger">Eye Colors: {specie.eye_colors}</div>
+				<div className="col-2 text-danger">Language: {specie.language}</div> */}
 			</div>
 		</div>
 	);

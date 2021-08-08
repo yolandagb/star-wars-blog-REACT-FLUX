@@ -7,11 +7,8 @@ import PropTypes from "prop-types";
 const HeartButton = props => {
 	const { store, actions } = useContext(Context);
 
-	const handleClick = event => {
-		actions.addFavs();
-	};
 	return (
-		<button onClick={handleClick} type="button" className="btn btn-warning">
+		<button onClick={() => actions.addItem(item.name)} type="button" className="btn btn-warning">
 			<i className="far fa-heart" />
 		</button>
 	);

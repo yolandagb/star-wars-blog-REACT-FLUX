@@ -1,5 +1,5 @@
-import React, { useState, useEffect, useContext, useParams } from "react";
-import { Link } from "react-router-dom";
+import React, { useState, useEffect, useContext } from "react";
+import { Link, useParams } from "react-router-dom";
 import { Context } from "../store/appContext";
 import PropTypes from "prop-types";
 
@@ -7,6 +7,9 @@ import "../../styles/demo.scss";
 
 const Characters = props => {
 	const { store, actions } = useContext(Context);
+	// const person = useEffect(() => {
+	// 	actions.getPeopleDetails();
+	// }, []);
 
 	return (
 		<>
@@ -28,29 +31,16 @@ const Characters = props => {
 							antilles.
 						</h6>
 					</div>
+					<div className="divider bg-danger" />
+					<div className="row d-flex ml-5">
+						<div className="col-2 text-danger">Name:</div>
+						<div className="col-2 text-danger">Birth Year: </div>
+						<div className="col-2 text-danger">Gender: </div>
+						<div className="col-2 text-danger">Height:</div>
+						<div className="col-2 text-danger">Skin Color: </div>
+						<div className="col-2 text-danger">Eye Color: </div>
+					</div>
 				</div>
-				<div className="divider bg-danger" />
-				{store.people.map((person, index) => {
-					return (
-						<div className="row d-flex ml-5" key={index} title={person.name}>
-							<div className="col-2 text-danger">
-								Name:
-								{person.name}{" "}
-							</div>
-							<div className="col-2 text-danger">
-								Birth Year:
-								{person.birth_year}{" "}
-							</div>
-							<div className="col-2 text-danger">Gender: {person.gender}</div>
-							<div className="col-2 text-danger">
-								Height:
-								{person.height}{" "}
-							</div>
-							<div className="col-2 text-danger">Skin Color: {person.skin_color}</div>
-							<div className="col-2 text-danger">Eye Color: {person.eye_color} </div>
-						</div>
-					);
-				})}
 			</div>
 		</>
 	);
@@ -58,8 +48,13 @@ const Characters = props => {
 export default Characters;
 
 Characters.propTypes = {
+	// url: PropTypes.string,
+	// uid: PropTypes.string,
 	name: PropTypes.string,
 	gender: PropTypes.string,
 	hair_color: PropTypes.string,
-	eye_color: PropTypes.string
+	eye_color: PropTypes.string,
+	birth_year: PropTypes.string,
+	height: PropTypes.string,
+	skin_color: PropTypes.string
 };

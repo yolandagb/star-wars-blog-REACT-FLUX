@@ -22,7 +22,6 @@ const GeneralCard = props => {
 					<h5 className="card-title">{props.title}</h5>
 					<h5 className="card-title">{props.children}</h5>
 				</p>
-				<HeartButton />
 			</div>
 		</div>
 	);
