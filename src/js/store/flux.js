@@ -9,8 +9,7 @@ const getState = ({ getStore, getActions, setStore }) => {
 			// vehiclesDetails: [],
 			species: [],
 			speciesDetails: [],
-			favourites: [],
-			deleteFavourites: []
+			favorites: []
 		},
 		actions: {
 			getPeople: data => {
@@ -68,23 +67,9 @@ const getState = ({ getStore, getActions, setStore }) => {
 					.then(data => setStore({ vehicles: data.results }))
 					.catch(err => err);
 			},
-
-			setMyFavourites: myFavouritesName => {
-				if (
-					!getStore().favourites.find(favourite => {
-						return favourite == myFavouritesName;
-					})
-				) {
-					setStore({
-						favourites: [...getStore().favourites, myFavouritesName]
-					});
-				}
-			},
-
-			setDeleteMyFavourites: deleted => {
-				setStore({
-					favourites: getStore().favourites.filter(item => item != deleted)
-				});
+			setFavorites: fav => {
+				const store = getStore();
+				setStore(store.favorites.push(fav));
 			},
 			// getFavourites() {
 			// 	const store = getStore();

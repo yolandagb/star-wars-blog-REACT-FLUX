@@ -4,6 +4,7 @@ import PropTypes from "prop-types";
 import { Link } from "react-router-dom";
 import "../../styles/home.scss";
 import GeneralCard from "../component/generalCard";
+import HeartButton from "../component/heartBtn";
 
 const Home = props => {
 	const { store, actions } = useContext(Context);
@@ -30,13 +31,7 @@ const Home = props => {
 							<Link to="/characters" className="link_to">
 								<button className="btn btn-primary">Learn more</button>
 							</Link>{" "}
-							<Link>
-								<button
-									className="btn btn-outline-danger"
-									onClick={() => actions.setMyFavourites(person.name)}>
-									<i className="far fa-heart" />
-								</button>
-							</Link>
+							<HeartButton className="btn btn-outline-danger float-right" />
 						</GeneralCard>
 					);
 				})}

@@ -8,9 +8,19 @@ const HeartButton = props => {
 	const { store, actions } = useContext(Context);
 
 	return (
-		<button onClick={() => actions.addItem(item.name)} type="button" className="btn btn-warning">
+		<button
+			type="button"
+			className="btn btn-outline-danger float-right"
+			onClick={() => actions.setFavorites(item.fav)}>
 			<i className="far fa-heart" />
 		</button>
+		// 	<Link>
+		// 	<button
+		// 		className="btn btn-outline-danger"
+		// 		onClick={() => actions.setMyFavourites(person.name)}>
+		// 		<i className="far fa-heart" />
+		// 	</button>
+		// </Link>
 	);
 };
 export default HeartButton;
@@ -19,5 +29,6 @@ HeartButton.propTypes = {
 	url: PropTypes.string,
 	uid: PropTypes.string,
 	name: PropTypes.string,
-	next: PropTypes.string
+	next: PropTypes.string,
+	obj: PropTypes.object
 };
