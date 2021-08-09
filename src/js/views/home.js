@@ -29,7 +29,7 @@ const Home = props => {
 							<p className="card-text">Eye color: {person.eye_color}</p>
 							<p className="card-text"> Hair color: {person.hair_color}</p>
 							<Link to="/characters" className="link_to">
-								<button className="btn btn-primary">Learn more</button>
+								<button className="btn">Learn more</button>
 							</Link>{" "}
 							<HeartButton className="btn btn-outline-danger float-right" />
 						</GeneralCard>
@@ -49,7 +49,7 @@ const Home = props => {
 							<p className="card-text">Terrain: {planet.terrain}</p>
 							<p className="card-text">Climate: {planet.climate}</p>
 							<Link to="/planets" className="link_to">
-								<button className="btn btn-primary">Learn more</button>
+								<button className="btn">Learn more</button>
 							</Link>{" "}
 							<Link>
 								<button
@@ -75,7 +75,7 @@ const Home = props => {
 							<p className="card-text">Terrain: {specie.designation}</p>
 							<p className="card-text">Language: {specie.language}</p>
 							<Link to="/species" className="link_to">
-								<button className="btn btn-primary">Learn more</button>
+								<button className="btn">Learn more</button>
 							</Link>{" "}
 							<Link>
 								<button
@@ -100,7 +100,7 @@ const Home = props => {
 							<p className="card-text">Vehicle class: {vehicle.vehicle_class}</p>
 							<p className="card-text">Crew: {vehicle.crew}</p>
 							<Link to="/vehicles" className="link_to">
-								<button className="btn btn-primary">Learn more</button>
+								<button className="btn">Learn more</button>
 							</Link>{" "}
 							<Link>
 								<button

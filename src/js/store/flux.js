@@ -71,10 +71,10 @@ const getState = ({ getStore, getActions, setStore }) => {
 				const store = getStore();
 				setStore(store.favorites.push(fav));
 			},
-			// getFavourites() {
-			// 	const store = getStore();
-			// 	return [...store.favourites];
-			// },
+			getFavorites() {
+				const store = getStore();
+				return [...store.favorites];
+			},
 
 			// Use getActions to call a function within a fuction
 			exampleFunction: () => {

@@ -8,19 +8,9 @@ const HeartButton = props => {
 	const { store, actions } = useContext(Context);
 
 	return (
-		<button
-			type="button"
-			className="btn btn-outline-danger float-right"
-			onClick={() => actions.setFavorites(item.fav)}>
+		<button type="button" className="btn btn-outline-danger float-right">
 			<i className="far fa-heart" />
 		</button>
-		// 	<Link>
-		// 	<button
-		// 		className="btn btn-outline-danger"
-		// 		onClick={() => actions.setMyFavourites(person.name)}>
-		// 		<i className="far fa-heart" />
-		// 	</button>
-		// </Link>
 	);
 };
 export default HeartButton;

@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+
 .jumbotron{
     margin:15px 30px 0px 30px;
     border-radius:10px;
@@ -7,4 +9,18 @@
   background-attachment: fixed;
   color:white !important;
   height: 600px;
-  }
+  
+}
+.display-4{
+  margin-top: 50px;
+  font-family: 'Press Start 2P', regular;
+  font-size: 2.5rem;
+  text-align: center;
+}
+.btn-primary, .btn-lg{
+  // margin-top: 400px;
+  // margin-left: 850px;
+  background:transparent;
+  border-color: transparent;
+  font-family: 'Press Start 2P', regular; 
+}
