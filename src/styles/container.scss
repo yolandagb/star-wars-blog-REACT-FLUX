@@ -1,12 +1,17 @@
  @import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
  .card{
-      max-width: 550px;
-      min-width: 420px;
-      margin:  0 2rem;
-      height: 550px;
+    max-width: 550px;
+    min-width: 420px;
+    margin:  0 2rem;
+    height: 550px;
+    box-shadow: 10px 10px 5px grey;
 
-    }
+}
 .card-img-top{
+    height: 340px;
+    width: 420px;
+}
+.image-fluid{
     height: 340px;
     width: 420px;
 }

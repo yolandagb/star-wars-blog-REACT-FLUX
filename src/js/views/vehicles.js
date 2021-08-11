@@ -9,7 +9,7 @@ const Vehicles = props => {
 		<div>
 			<div className="jumbotron-fluid mx-5 my-5 d-flex flex-row">
 				<div className="left-side d-inline-block">
-					<img src="https://picsum.photos/600/300?random=2" />
+					<img src="https://th.bing.com/th/id/OIP.J4Fv4OUAf0EDqp090m1KigHaEK?pid=ImgDet&rs=1" />
 				</div>
 				<div className="right-side d-inline-block">
 					<h1 className="text-center text-monospace" />
@@ -26,12 +26,12 @@ const Vehicles = props => {
 			</div>
 			<div className="divider bg-danger" />
 			<div className="row d-flex ml-5">
-				{/* <div className="col-2 text-danger">Name: {specie.name}</div>
-				<div className="col-2 text-danger">Average Height: {specie.average_height}</div>
-				<div className="col-2 text-danger">Average Lifespan: {specie.average_lifespan}</div>
-				<div className="col-2 text-danger">Classification: {specie.classification}</div>
-				<div className="col-2 text-danger">Eye Colors: {specie.eye_colors}</div>
-				<div className="col-2 text-danger">Language: {specie.language}</div> */}
+				<div className="col-2 text-danger">Name: </div>
+				<div className="col-2 text-danger">Cargo capacity: </div>
+				<div className="col-2 text-danger">Consumables: </div>
+				<div className="col-2 text-danger">Crew: </div>
+				<div className="col-2 text-danger">Max atmosphering speed: </div>
+				<div className="col-2 text-danger">Model: </div>
 			</div>
 		</div>
 	);

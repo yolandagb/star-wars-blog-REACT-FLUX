@@ -2,11 +2,11 @@ const getState = ({ getStore, getActions, setStore }) => {
 	return {
 		store: {
 			people: [],
-			peopleDetails: [],
+			peopleDetails: {},
 			planets: [],
 			palnetDetails: [],
 			vehicles: [],
-			// vehiclesDetails: [],
+			vehiclesDetails: [],
 			species: [],
 			speciesDetails: [],
 			favorites: []
@@ -23,15 +23,15 @@ const getState = ({ getStore, getActions, setStore }) => {
 					.then(data => setStore({ people: data.results }))
 					.catch(err => err);
 			},
-			getPeopleDetails: datac => {
+			getPeopleDetails: id => {
 				const store = getStore();
-				const endpoint = `http https://swapi.dev/api/people/${id}`;
+				const endpoint = `https://swapi.dev/api/people/${id}`;
 				const config = {
 					method: "GET"
 				};
 				fetch(endpoint, config)
 					.then(res => res.json())
-					.then(data => setStore({ peopleDetails: data.result }))
+					.then(data => setStore({ peopleDetails: data }))
 					.catch(err => err);
 			},
 			getPlanets: data => {
@@ -69,13 +69,8 @@ const getState = ({ getStore, getActions, setStore }) => {
 			},
 			setFavorites: fav => {
 				const store = getStore();
-				setStore(store.favorites.push(fav));
+				setStore({ favorites: [...store.favorites, fav] });
 			},
-			getFavorites() {
-				const store = getStore();
-				return [...store.favorites];
-			},
-
 			// Use getActions to call a function within a fuction
 			exampleFunction: () => {
 				getActions().changeColor(0, "green");

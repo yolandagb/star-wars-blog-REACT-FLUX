@@ -1,22 +1,25 @@
 import React, { useState, useEffect, useContext } from "react";
-import { Link, useParams } from "react-router-dom";
 import { Context } from "../store/appContext";
 import PropTypes from "prop-types";
-
+import { Link, useParams } from "react-router-dom";
 import "../../styles/demo.scss";
 
 const Characters = props => {
 	const { store, actions } = useContext(Context);
-	// const person = useEffect(() => {
-	// 	actions.getPeopleDetails();
-	// }, []);
+	const params = useParams();
+	useEffect(() => {
+		actions.getPeopleDetails(params.theid);
+	}, []);
 
 	return (
 		<>
 			<div>
 				<div className="jumbotron-fluid mx-5 my-5 d-flex flex-row">
 					<div className="left-side d-inline-block">
-						<img src="https://picsum.photos/600/300?random=2" />
+						<img
+							className="image-fluid"
+							src="https://th.bing.com/th/id/R.8d6ceed7c5cfcb4313bbc531b8cca18d?rik=U6N6EzsMRo3Gqg&pid=ImgRaw&r=0"
+						/>{" "}
 					</div>
 					<div className="right-side d-inline-block">
 						<h1 className="text-center text-monospace" />
@@ -31,30 +34,38 @@ const Characters = props => {
 							antilles.
 						</h6>
 					</div>
-					<div className="divider bg-danger" />
-					<div className="row d-flex ml-5">
-						<div className="col-2 text-danger">Name:</div>
-						<div className="col-2 text-danger">Birth Year: </div>
+				</div>
+				<div className="divider bg-danger" />
+				{store.peopleDetails ? (
+					<div className="row d-flex m-3">
+						<div className="col-2 text-danger">
+							Name:
+							{/* {person.name} */}
+						</div>
+						<div className="col-2 text-danger">
+							Birth Year:
+							{store.peopleDetails.birth_year}{" "}
+						</div>
 						<div className="col-2 text-danger">Gender: </div>
 						<div className="col-2 text-danger">Height:</div>
 						<div className="col-2 text-danger">Skin Color: </div>
 						<div className="col-2 text-danger">Eye Color: </div>
 					</div>
-				</div>
+				) : (
+					""
+				)}
 			</div>
 		</>
 	);
 };
 export default Characters;
 
-Characters.propTypes = {
-	// url: PropTypes.string,
-	// uid: PropTypes.string,
-	name: PropTypes.string,
-	gender: PropTypes.string,
-	hair_color: PropTypes.string,
-	eye_color: PropTypes.string,
-	birth_year: PropTypes.string,
-	height: PropTypes.string,
-	skin_color: PropTypes.string
-};
+// Characters.propTypes = {
+// 	name: PropTypes.string,
+// 	gender: PropTypes.string,
+// 	hair_color: PropTypes.string,
+// 	eye_color: PropTypes.string,
+// 	birth_year: PropTypes.string,
+// 	height: PropTypes.string,
+// 	skin_color: PropTypes.string
+// };

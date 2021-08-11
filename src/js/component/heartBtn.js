@@ -8,7 +8,11 @@ const HeartButton = props => {
 	const { store, actions } = useContext(Context);
 
 	return (
-		<button type="button" className="btn btn-outline-danger float-right">
+		<button
+			type="button"
+			className="btn btn-outline-danger"
+			onClick={() => actions.setFavorites(props.name)}
+			id="myHeartBtn">
 			<i className="far fa-heart" />
 		</button>
 	);

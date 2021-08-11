@@ -8,10 +8,10 @@ const FavDropdown = props => {
 	const [selectedFavorites, setselectedFavorites] = useState({
 		favorites: {}
 	});
-	const allFavorites = store.favorites.map(item => {
+	const allFavorites = store.favorites.map((item, index) => {
 		return (
-			<option key={item.id} value={item.id}>
-				{item.name}
+			<option key={index} value={index}>
+				{item}
 			</option>
 		);
 	});

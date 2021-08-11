@@ -28,15 +28,15 @@ const Planets = props => {
 							antilles.
 						</h6>
 					</div>
-					<div className="divider bg-danger" />
-					<div className="row d-flex ml-5">
-						{/* <div className="col-2 text-danger">Name: {planet.name}</div>
-						<div className="col-2 text-danger">Climate: {planet.climate}</div>
-						<div className="col-2 text-danger">Population: {planet.population}</div>
-						<div className="col-2 text-danger">Orbital Period: {planet.orbital_period}</div>
-						<div className="col-2 text-danger">Rotation Period: {planet.rotation_period}</div>
-						<div className="col-2 text-danger">Diameter: {planet.diameter}</div> */}
-					</div>
+				</div>
+				<div className="divider bg-danger" />
+				<div className="row d-flex ml-5">
+					<div className="col-2 text-danger">Name: </div>
+					<div className="col-2 text-danger">Climate: </div>
+					<div className="col-2 text-danger">Population: </div>
+					<div className="col-2 text-danger">Orbital Period: </div>
+					<div className="col-2 text-danger">Rotation Period: </div>
+					<div className="col-2 text-danger">Diameter: </div>
 				</div>
 			</div>
 		</>

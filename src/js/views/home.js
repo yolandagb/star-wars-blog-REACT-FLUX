@@ -8,6 +8,7 @@ import HeartButton from "../component/heartBtn";
 
 const Home = props => {
 	const { store, actions } = useContext(Context);
+	// let path = "/"+props.resource+"/"+props.id;
 	useEffect(() => {
 		actions.getPeople();
 		actions.getPlanets();
@@ -28,10 +29,10 @@ const Home = props => {
 							<p className="card-text">Gender: {person.gender}</p>
 							<p className="card-text">Eye color: {person.eye_color}</p>
 							<p className="card-text"> Hair color: {person.hair_color}</p>
-							<Link to="/characters" className="link_to">
-								<button className="btn">Learn more</button>
+							<Link to={"/characters/" + (index + 1)} className="link_to">
+								<button className="btn-learnmore">Learn more</button>
 							</Link>{" "}
-							<HeartButton className="btn btn-outline-danger float-right" />
+							<HeartButton name={person.name} />
 						</GeneralCard>
 					);
 				})}
@@ -49,15 +50,9 @@ const Home = props => {
 							<p className="card-text">Terrain: {planet.terrain}</p>
 							<p className="card-text">Climate: {planet.climate}</p>
 							<Link to="/planets" className="link_to">
-								<button className="btn">Learn more</button>
+								<button className="btn-learnmore">Learn more</button>
 							</Link>{" "}
-							<Link>
-								<button
-									className="btn btn-outline-danger"
-									onClick={() => actions.setMyFavourites(planet.name)}>
-									<i className="far fa-heart" />
-								</button>
-							</Link>
+							<HeartButton />
 						</GeneralCard>
 					);
 				})}
@@ -75,15 +70,9 @@ const Home = props => {
 							<p className="card-text">Terrain: {specie.designation}</p>
 							<p className="card-text">Language: {specie.language}</p>
 							<Link to="/species" className="link_to">
-								<button className="btn">Learn more</button>
+								<button className="btn-learnmore">Learn more</button>
 							</Link>{" "}
-							<Link>
-								<button
-									className="btn btn-outline-danger"
-									onClick={() => actions.setMyFavourites(specie.name)}>
-									<i className="far fa-heart" />
-								</button>
-							</Link>
+							<HeartButton />
 						</GeneralCard>
 					);
 				})}
@@ -100,15 +89,9 @@ const Home = props => {
 							<p className="card-text">Vehicle class: {vehicle.vehicle_class}</p>
 							<p className="card-text">Crew: {vehicle.crew}</p>
 							<Link to="/vehicles" className="link_to">
-								<button className="btn">Learn more</button>
+								<button className="btn-learnmore">Learn more</button>
 							</Link>{" "}
-							<Link>
-								<button
-									className="btn btn-outline-danger"
-									onClick={() => actions.setMyFavourites(vehicle.name)}>
-									<i className="far fa-heart" />
-								</button>
-							</Link>
+							<HeartButton />
 						</GeneralCard>
 					);
 				})}
@@ -119,6 +102,8 @@ const Home = props => {
 export default Home;
 
 Home.propTypes = {
+	// resource: PropTypes.string,
+	// uid: PropTypes.string,
 	name: PropTypes.string,
 	gender: PropTypes.string,
 	hair_color: PropTypes.string,
