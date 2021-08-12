@@ -28,9 +28,9 @@ const Layout = () => {
 						<Route exact path="/" component={WelcomePage} />
 						<Route exact path="/home" component={Home} />
 						<Route exact path="/characters/:theid" component={Characters} />
-						<Route exact path="/planets" component={Planets} />
-						<Route exact path="/species" component={Species} />
-						<Route exact path="/vehicles" component={Vehicles} />
+						<Route exact path="/planets/:theid" component={Planets} />
+						<Route exact path="/species/:theid" component={Species} />
+						<Route exact path="/vehicles/:theid" component={Vehicles} />
 					</Switch>
 					<Footer />
 				</ScrollToTop>

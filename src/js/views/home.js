@@ -1,14 +1,12 @@
 import React, { useState, useEffect, useContext } from "react";
 import { Context } from "../store/appContext";
-import PropTypes from "prop-types";
-import { Link } from "react-router-dom";
-import "../../styles/home.scss";
 import GeneralCard from "../component/generalCard";
 import HeartButton from "../component/heartBtn";
-
+import { Link } from "react-router-dom";
+import PropTypes from "prop-types";
+import "../../styles/home.scss";
 const Home = props => {
 	const { store, actions } = useContext(Context);
-	// let path = "/"+props.resource+"/"+props.id;
 	useEffect(() => {
 		actions.getPeople();
 		actions.getPlanets();
@@ -18,7 +16,7 @@ const Home = props => {
 
 	return (
 		<div className="main-page">
-			<h1 className="header-characters text-danger">
+			<h1 className="header-characters text-warning">
 				<strong>Characters</strong>
 			</h1>
 			<p />
@@ -26,9 +24,15 @@ const Home = props => {
 				{store.people.map((person, index) => {
 					return (
 						<GeneralCard key={index} title={person.name}>
-							<p className="card-text">Gender: {person.gender}</p>
-							<p className="card-text">Eye color: {person.eye_color}</p>
-							<p className="card-text"> Hair color: {person.hair_color}</p>
+							<p className="card-text">
+								<strong>Gender:</strong> {person.gender}
+							</p>
+							<p className="card-text">
+								<strong>Eye color:</strong> {person.eye_color}
+							</p>
+							<p className="card-text">
+								<strong>Hair color:</strong> {person.hair_color}
+							</p>
 							<Link to={"/characters/" + (index + 1)} className="link_to">
 								<button className="btn-learnmore">Learn more</button>
 							</Link>{" "}
@@ -39,59 +43,80 @@ const Home = props => {
 			</div>
 
 			<p />
-			<h1 className="header-planets text-danger">
+			<h1 className="header-planets text-warning">
 				<strong>Planets</strong>
 			</h1>
 			<div className="flex-container">
 				{store.planets.map((planet, index) => {
 					return (
 						<GeneralCard key={index} title={planet.name}>
-							<p className="card-text">Population: {planet.population}</p>
-							<p className="card-text">Terrain: {planet.terrain}</p>
-							<p className="card-text">Climate: {planet.climate}</p>
-							<Link to="/planets" className="link_to">
+							<p className="card-text">
+								<strong>Population:</strong> {planet.population}
+							</p>
+							<p className="card-text">
+								<strong>Terrain:</strong> {planet.terrain}
+							</p>
+							<p className="card-text">
+								<strong>Climate: </strong>
+								{planet.climate}
+							</p>
+							<Link to={"/planets/" + (index + 1)} className="link_to">
 								<button className="btn-learnmore">Learn more</button>
 							</Link>{" "}
-							<HeartButton />
+							<HeartButton name={planet.name} />
 						</GeneralCard>
 					);
 				})}
 			</div>
 
 			<p />
-			<h1 className="header-vehicles text-danger">
+			<h1 className="header-vehicles text-warning">
 				<strong>Species</strong>
 			</h1>
 			<div className="flex-container">
 				{store.species.map((specie, index) => {
 					return (
 						<GeneralCard key={index} title={specie.name}>
-							<p className="card-text">Population: {specie.classification}</p>
-							<p className="card-text">Terrain: {specie.designation}</p>
-							<p className="card-text">Language: {specie.language}</p>
-							<Link to="/species" className="link_to">
+							<p className="card-text">
+								<strong>Population:</strong> {specie.classification}
+							</p>
+							<p className="card-text">
+								<strong>Terrain:</strong> {specie.designation}
+							</p>
+							<p className="card-text">
+								<strong>Language:</strong> {specie.language}
+							</p>
+							<Link to={"/species/" + (index + 1)} className="link_to">
 								<button className="btn-learnmore">Learn more</button>
 							</Link>{" "}
-							<HeartButton />
+							<HeartButton name={specie.name} />
 						</GeneralCard>
 					);
 				})}
 			</div>
 			<p />
-			<h1 className="header-vehicles text-danger">
+			<h1 className="header-vehicles text-warning">
 				<strong>Vehicles</strong>
 			</h1>
 			<div className="flex-container">
 				{store.vehicles.map((vehicle, index) => {
 					return (
 						<GeneralCard key={index} title={vehicle.name}>
-							<p className="card-text">Model: {vehicle.model}</p>
-							<p className="card-text">Vehicle class: {vehicle.vehicle_class}</p>
-							<p className="card-text">Crew: {vehicle.crew}</p>
-							<Link to="/vehicles" className="link_to">
+							<p className="card-text">
+								<strong>Model:</strong>
+								{vehicle.model}
+							</p>
+							<p className="card-text">
+								<strong>Vehicle class:</strong> {vehicle.vehicle_class}
+							</p>
+							<p className="card-text">
+								<strong>Crew:</strong>
+								{vehicle.crew}
+							</p>
+							<Link to={"/vehicles/" + (index + 1)} className="link_to">
 								<button className="btn-learnmore">Learn more</button>
 							</Link>{" "}
-							<HeartButton />
+							<HeartButton name={vehicle.name} />
 						</GeneralCard>
 					);
 				})}

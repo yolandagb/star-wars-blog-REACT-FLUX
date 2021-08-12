@@ -5,12 +5,12 @@ import "../../styles/navbar.scss";
 
 export const Navbar = () => {
 	return (
-		<nav className="navbar navbar-light bg-light mb-3">
-			<Link to="/home">
+		<nav className="navbar navbar bg mb-3">
+			<Link to="/">
 				<span className="navbar-brand mb-0 h1">
 					{" "}
 					<img
-						src="https://maxcdn.icons8.com/Share/icon/ios7/Logos/star_wars1600.png"
+						src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/9b/Star_Wars_Yellow_Logo.svg/1200px-Star_Wars_Yellow_Logo.svg.png"
 						className="starwars-logo"
 					/>
 				</span>

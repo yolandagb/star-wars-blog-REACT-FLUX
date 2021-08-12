@@ -16,10 +16,6 @@ const FavDropdown = props => {
 		);
 	});
 
-	// useEffect(() => {
-	// 	actions.getCollections();
-	// }, []);
-
 	return (
 		<>
 			<select
@@ -34,6 +30,9 @@ const FavDropdown = props => {
 						favorites: store.favorites.find(item => item.id == event.target.value)
 					});
 				}}>
+				<button onClick={() => actions.deleteFavorites(fav)} type="button" className="close" aria-label="Close">
+					<span aria-hidden="true">x</span>
+				</button>
 				<option selected value="0">
 					Favorites
 				</option>
@@ -41,32 +40,5 @@ const FavDropdown = props => {
 			</select>
 		</>
 	);
-	// <div className="dropdown">
-	// 	<button
-	// 		className="btn btn-primary dropdown-toggle"
-	// 		type="button"
-	// 		id="dropdownMenuButton"
-	// 		data-toggle="dropdown"
-	// 		aria-haspopup="true"
-	// 		aria-expanded="false">
-	// 		<i className="fas fa-heart" />
-	// 	</button>
-	// 	<div className="dropdown-menu" aria-labelledby="dropdownMenuButton">
-	// 		{/* {store.favourites.map((fav, index) => {
-	// 			return (
-	// 				<a className="dropdown-item" key={index} href="#">
-	// 					{fav}
-	// 					<button
-	// 						onClick={() => actions.deleteFavourites(fav)}
-	// 						type="button"
-	// 						className="close"
-	// 						aria-label="Close">
-	// 						<span aria-hidden="true">&times;</span>
-	// 					</button>
-	// 				</a>
-	// 			);
-	// 		})} */}
-	// 	</div>
-	// </div>
 };
 export default FavDropdown;

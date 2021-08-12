@@ -21,10 +21,10 @@
 }
 @keyframes glow {
   from {
-    text-shadow: 0 0 20px #2d9da9;
+    text-shadow: 0 0 20px #d8ca04;
   }
   to {
-    text-shadow: 0 0 30px #34b3c1, 0 0 10px #4dbbc7;
+    text-shadow: 0 0 30px  #d8ca04, 0 0 10px #d8ca04;
   }
 }
 .btn-primary, .btn-lg{
@@ -38,7 +38,7 @@
 }
 .btn-primary:hover, .btn-primary:focus{
   background-color:transparent;
-  color:#FFF;
+  color:#d8ca04;
   border-color:transparent;
   
 }

@@ -19,7 +19,7 @@ const GeneralCard = props => {
 			<div className="card-body">
 				<h5 className="card-title" />
 				<p className="card-text">
-					<h5 className="card-title">{props.title}</h5>
+					<h3 className="card-name">{props.title}</h3>
 					<h5 className="card-title">{props.children}</h5>
 				</p>
 			</div>

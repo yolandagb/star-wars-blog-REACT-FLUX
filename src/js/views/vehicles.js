@@ -1,9 +1,13 @@
-import React, { useContext } from "react";
+import React, { useContext, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import { Context } from "../store/appContext";
 
 const Vehicles = props => {
 	const { store, actions } = useContext(Context);
+	const params = useParams();
+	useEffect(() => {
+		actions.getVehiclesDetails(params.theid);
+	}, []);
 
 	return (
 		<div>
@@ -25,14 +29,35 @@ const Vehicles = props => {
 				</div>
 			</div>
 			<div className="divider bg-danger" />
-			<div className="row d-flex ml-5">
-				<div className="col-2 text-danger">Name: </div>
-				<div className="col-2 text-danger">Cargo capacity: </div>
-				<div className="col-2 text-danger">Consumables: </div>
-				<div className="col-2 text-danger">Crew: </div>
-				<div className="col-2 text-danger">Max atmosphering speed: </div>
-				<div className="col-2 text-danger">Model: </div>
-			</div>
+			{store.vehiclesDetails ? (
+				<div className="row d-flex ml-5">
+					<div className="col-2 text-danger">
+						Name:
+						{store.vehiclesDetails.name}{" "}
+					</div>
+					<div className="col-2 text-danger">
+						Cargo capacity:
+						{store.vehiclesDetails.cargo_capacity}{" "}
+					</div>
+					<div className="col-2 text-danger">
+						Consumables:
+						{store.vehiclesDetails.consumables}{" "}
+					</div>
+					<div className="col-2 text-danger">
+						Crew:
+						{store.vehiclesDetails.crew}{" "}
+					</div>
+					<div className="col-2 text-danger">
+						Max atmosphering speed: {store.vehiclesDetails.max_atmosphering_speed}
+					</div>
+					<div className="col-2 text-danger">
+						Model:
+						{store.vehiclesDetails.model}{" "}
+					</div>
+				</div>
+			) : (
+				""
+			)}
 		</div>
 	);
 };

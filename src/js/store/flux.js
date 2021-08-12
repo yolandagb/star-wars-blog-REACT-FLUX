@@ -4,11 +4,11 @@ const getState = ({ getStore, getActions, setStore }) => {
 			people: [],
 			peopleDetails: {},
 			planets: [],
-			palnetDetails: [],
+			planetDetails: {},
 			vehicles: [],
-			vehiclesDetails: [],
+			vehiclesDetails: {},
 			species: [],
-			speciesDetails: [],
+			speciesDetails: {},
 			favorites: []
 		},
 		actions: {
@@ -45,6 +45,18 @@ const getState = ({ getStore, getActions, setStore }) => {
 					.then(data => setStore({ planets: data.results }))
 					.catch(err => err);
 			},
+			getPlanetDetails: id => {
+				const store = getStore();
+				const endpoint = `https://swapi.dev/api/planets/${id}`;
+				const config = {
+					method: "GET"
+				};
+				fetch(endpoint, config)
+					.then(res => res.json())
+					.then(data => setStore({ planetDetails: data }))
+					.catch(err => err);
+			},
+
 			getSpecies: data => {
 				const store = getStore();
 				const endpoint = "https://swapi.dev/api/species/";
@@ -54,6 +66,17 @@ const getState = ({ getStore, getActions, setStore }) => {
 				fetch(endpoint, config)
 					.then(res => res.json())
 					.then(data => setStore({ species: data.results }))
+					.catch(err => err);
+			},
+			geSpeciesDetails: id => {
+				const store = getStore();
+				const endpoint = `https://swapi.dev/api/species/${id}`;
+				const config = {
+					method: "GET"
+				};
+				fetch(endpoint, config)
+					.then(res => res.json())
+					.then(data => setStore({ speciesDetails: data }))
 					.catch(err => err);
 			},
 			getVehicles: data => {
@@ -67,8 +90,24 @@ const getState = ({ getStore, getActions, setStore }) => {
 					.then(data => setStore({ vehicles: data.results }))
 					.catch(err => err);
 			},
+			getVehiclesDetails: id => {
+				const store = getStore();
+				const endpoint = `https://swapi.dev/api/vehicles/${id}`;
+				const config = {
+					method: "GET"
+				};
+				fetch(endpoint, config)
+					.then(res => res.json())
+					.then(data => setStore({ vehiclesDetails: data }))
+					.catch(err => err);
+			},
 			setFavorites: fav => {
 				const store = getStore();
+				setStore({ favorites: [...store.favorites, fav] });
+			},
+			deleteFavorites: fav => {
+				const store = getStore();
+				store.favorites.delete(fav);
 				setStore({ favorites: [...store.favorites, fav] });
 			},
 			// Use getActions to call a function within a fuction

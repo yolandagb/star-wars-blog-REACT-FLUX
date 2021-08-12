@@ -1,12 +1,13 @@
-import React, { useContext } from "react";
+import React, { useContext, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import { Context } from "../store/appContext";
 
 const Planets = props => {
 	const { store, actions } = useContext(Context);
-	// const person = useEffect(() => {
-	// 	actions.getPeopleDetails();
-	// }, []);
+	const params = useParams();
+	useEffect(() => {
+		actions.getPlanetDetails(params.theid);
+	}, []);
 
 	return (
 		<>
@@ -30,14 +31,21 @@ const Planets = props => {
 					</div>
 				</div>
 				<div className="divider bg-danger" />
-				<div className="row d-flex ml-5">
-					<div className="col-2 text-danger">Name: </div>
-					<div className="col-2 text-danger">Climate: </div>
-					<div className="col-2 text-danger">Population: </div>
-					<div className="col-2 text-danger">Orbital Period: </div>
-					<div className="col-2 text-danger">Rotation Period: </div>
-					<div className="col-2 text-danger">Diameter: </div>
-				</div>
+				{store.planetDetails ? (
+					<div className="row d-flex ml-5">
+						<div className="col-2 text-danger">Name: {store.planetDetails.name} </div>
+						<div className="col-2 text-danger">Climate: {store.planetDetails.name} </div>
+						<div className="col-2 text-danger">
+							Population:
+							{store.planetDetails.name}{" "}
+						</div>
+						<div className="col-2 text-danger">Orbital Period: {store.planetDetails.name}</div>
+						<div className="col-2 text-danger">Rotation Period: {store.planetDetails.name}</div>
+						<div className="col-2 text-danger">Diameter: {store.planetDetails.name}</div>
+					</div>
+				) : (
+					""
+				)}
 			</div>
 		</>
 	);

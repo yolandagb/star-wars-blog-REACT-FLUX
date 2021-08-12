@@ -1,10 +1,16 @@
-import React, { useContext } from "react";
-import { useParams } from "react-router-dom";
+import React, { useState, useEffect, useContext } from "react";
 import { Context } from "../store/appContext";
+import PropTypes from "prop-types";
+import { Link, useParams } from "react-router-dom";
+import "../../styles/demo.scss";
 
 const Species = props => {
 	const params = useParams();
 	const { store, actions } = useContext(Context);
+	useEffect(() => {
+		actions.geSpeciesDetails(params.theid);
+	}, []);
+
 	return (
 		<div>
 			<div className="jumbotron-fluid mx-5 my-5 d-flex flex-row">
@@ -25,14 +31,21 @@ const Species = props => {
 				</div>
 			</div>
 			<div className="divider bg-danger" />
-			<div className="row d-flex ml-5">
-				<div className="col-2 text-danger">Name: </div>
-				<div className="col-2 text-danger">Average Height: </div>
-				<div className="col-2 text-danger">Average Lifespan: </div>
-				<div className="col-2 text-danger">Classification: </div>
-				<div className="col-2 text-danger">Eye Colors: </div>
-				<div className="col-2 text-danger">Language: </div>
-			</div>
+			{store.speciesDetails ? (
+				<div className="row d-flex ml-5">
+					<div className="col-2 text-danger">
+						Name:
+						{store.speciesDetails.name}{" "}
+					</div>
+					<div className="col-2 text-danger">Average Height: </div>
+					<div className="col-2 text-danger">Average Lifespan: </div>
+					<div className="col-2 text-danger">Classification: </div>
+					<div className="col-2 text-danger">Eye Colors: </div>
+					<div className="col-2 text-danger">Language: </div>
+				</div>
+			) : (
+				""
+			)}
 		</div>
 	);
 };

@@ -10,25 +10,27 @@ body{
 }
 
 .header-characters{
-     margin: 0 2rem;
+     margin: 0 0.75rem;
      padding: 22px;
      font-family: 'Press Start 2P', regular;
-     font-size: 22px;
-
+     font-size: 25px;
 }
 
 .header-planets{
-   margin: 0 2rem;
+   margin: 0 0.75rem;
    padding: 30px;
    font-family: 'Press Start 2P', regular;
-   font-size: 22px;
+   font-size: 25px;
 }
 
 .header-vehicles {
     padding: 30px;
-    margin: 0 2rem;
+    margin: 0 0.75rem;
     font-family: 'Press Start 2P', regular;
-    font-size: 22px;
+    font-size: 25px;
+}
+.card-text{
+ font-size: 18px;
 }
 #myHeartBtn{
      width: 40px;
