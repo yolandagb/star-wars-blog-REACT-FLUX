@@ -34,7 +34,7 @@ const Home = props => {
 								<strong>Hair color:</strong> {person.hair_color}
 							</p>
 							<Link to={"/characters/" + (index + 1)} className="link_to">
-								<button className="btn-learnmore">Learn more</button>
+								<button id="btnLearnmore">Learn more</button>
 							</Link>{" "}
 							<HeartButton name={person.name} />
 						</GeneralCard>
@@ -61,7 +61,7 @@ const Home = props => {
 								{planet.climate}
 							</p>
 							<Link to={"/planets/" + (index + 1)} className="link_to">
-								<button className="btn-learnmore">Learn more</button>
+								<button id="btnLearnmore">Learn more</button>
 							</Link>{" "}
 							<HeartButton name={planet.name} />
 						</GeneralCard>
@@ -87,7 +87,7 @@ const Home = props => {
 								<strong>Language:</strong> {specie.language}
 							</p>
 							<Link to={"/species/" + (index + 1)} className="link_to">
-								<button className="btn-learnmore">Learn more</button>
+								<button id="btnLearnmore">Learn more</button>
 							</Link>{" "}
 							<HeartButton name={specie.name} />
 						</GeneralCard>
@@ -114,7 +114,7 @@ const Home = props => {
 								{vehicle.crew}
 							</p>
 							<Link to={"/vehicles/" + (index + 1)} className="link_to">
-								<button className="btn-learnmore">Learn more</button>
+								<button id="btnLearnmore">Learn more</button>
 							</Link>{" "}
 							<HeartButton name={vehicle.name} />
 						</GeneralCard>

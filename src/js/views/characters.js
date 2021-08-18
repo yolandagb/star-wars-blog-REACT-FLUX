@@ -36,31 +36,43 @@ const Characters = props => {
 						</h6>
 					</div>
 				</div>
-				<div className="divider bg-danger" />
+				<div className="divider bg-red" />
 				{store.peopleDetails ? (
 					<div className="row d-flex m-3">
-						<div className="col-2 text-danger">
-							Name:
+						<div className="col-2 text-warning" id="characters">
+							<strong>Name:</strong>
+							<br />
+							<br />
 							{store.peopleDetails.name}
 						</div>
-						<div className="col-2 text-danger">
+						<div className="col-2 text-warning" id="characters">
 							Birth Year:
+							<br />
+							<br />
 							{store.peopleDetails.birth_year}{" "}
 						</div>
-						<div className="col-2 text-danger">
+						<div className="col-2 text-warning" id="characters">
 							Gender:
+							<br />
+							<br />
 							{store.peopleDetails.gender}{" "}
 						</div>
-						<div className="col-2 text-danger">
+						<div className="col-2 text-warning" id="characters">
 							Height:
+							<br />
+							<br />
 							{store.peopleDetails.height}{" "}
 						</div>
-						<div className="col-2 text-danger">
+						<div className="col-2 text-warning" id="characters">
 							Skin Color:
+							<br />
+							<br />
 							{store.peopleDetails.skin_color}{" "}
 						</div>
-						<div className="col-2 text-danger">
+						<div className="col-2 text-warning" id="characters">
 							Eye Color:
+							<br />
+							<br />
 							{store.peopleDetails.eye_color}{" "}
 						</div>
 					</div>

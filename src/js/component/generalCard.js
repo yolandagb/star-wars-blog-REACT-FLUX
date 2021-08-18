@@ -2,8 +2,8 @@ import React, { useState, useEffect, useContext } from "react";
 import { Context } from "../store/appContext";
 import { Link } from "react-router-dom";
 import PropTypes from "prop-types";
-import "../../styles/container.scss";
 import HeartButton from "./heartBtn.js";
+import "../../styles/generalCard.scss";
 import ReactDOM from "react-dom";
 
 const GeneralCard = props => {

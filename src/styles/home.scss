@@ -35,16 +35,28 @@ body{
 #myHeartBtn{
      width: 40px;
      float: right;
-}
-.btn,.btn-learnmore{
      height: 40px;
-     background:transparent;
      font-family: 'Press Start 2P', regular;
      font-size: 15px;
-     border: 2px,solid black;
+     border: 2px,solid;
+     border-radius: 25px;
+}
+#btnLearnmore{
+     height: 40px;
+     background: transparent;
+     font-family: 'Press Start 2P', regular;
+     font-size: 15px;
+     // border: 2px,solid black;
      border-radius: 25px;
      float: left; 
 }
+#btnLearnmore:hover, #btnLearnmore:focus{
+     background-color:rgb(255, 230, 0);;
+     color:white;
+     border-color:rgb(255, 230, 0);;
+     
+}
+   
 
 
 

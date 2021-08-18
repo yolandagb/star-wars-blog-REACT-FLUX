@@ -1,17 +1,18 @@
 @import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
-.bg-light{
-  background-color: transparent;
-}
+// .bg-light{
+//   // background-color: transparent;
+// }
 .starwars-logo {
   width: 100px;
   margin-left: 20px;
 }
-.input, button, select, optgroup, textarea{
+#selectFavs{
+  background-color: rgb(255, 230, 0);
   height: 39px;
   width:  185px;
   margin-right: 20px;
   font-size: 15px;
-  // border: 5px,solid black;
+  border: 5px;
   border-radius: 25px;
   font-family: 'Press Start 2P', regular;
   

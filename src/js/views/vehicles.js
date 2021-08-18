@@ -16,7 +16,10 @@ const Vehicles = props => {
 					<img src="https://th.bing.com/th/id/OIP.J4Fv4OUAf0EDqp090m1KigHaEK?pid=ImgDet&rs=1" />
 				</div>
 				<div className="right-side d-inline-block">
-					<h1 className="text-center text-monospace" />
+					<h1 className="text-center text-monospace" id="name">
+						{" "}
+						{store.vehiclesDetails.name}
+					</h1>
 					<h6 className="description mx-5 text-center text-monospace">
 						{" "}
 						Lucas ipsum dolor sit amet maul grievous mustafar wampa organa yavin organa fett antilles
@@ -31,7 +34,7 @@ const Vehicles = props => {
 			<div className="divider bg-danger" />
 			{store.vehiclesDetails ? (
 				<div className="row d-flex ml-5">
-					<div className="col-2 text-danger">
+					<div className="col-2 text-warning">
 						Name:
 						{store.vehiclesDetails.name}{" "}
 					</div>

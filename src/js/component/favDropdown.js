@@ -21,7 +21,7 @@ const FavDropdown = props => {
 			<select
 				size="sm"
 				as="select"
-				className_="select-favs"
+				id="selectFavs"
 				defaultValue={favorite}
 				onChange={event => {
 					setFavorite(event.target.value);
