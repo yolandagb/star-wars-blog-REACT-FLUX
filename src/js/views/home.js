@@ -95,10 +95,10 @@ const Home = props => {
 				})}
 			</div>
 			<p />
-			<h1 className="header-vehicles text-warning">
+			{/* <h1 className="header-vehicles text-warning">
 				<strong>Vehicles</strong>
-			</h1>
-			<div className="flex-container">
+			</h1> */}
+			{/* <div className="flex-container">
 				{store.vehicles.map((vehicle, index) => {
 					return (
 						<GeneralCard key={index} title={vehicle.name}>
@@ -120,15 +120,13 @@ const Home = props => {
 						</GeneralCard>
 					);
 				})}
-			</div>
+			</div> */}
 		</div>
 	);
 };
 export default Home;
 
 Home.propTypes = {
-	// resource: PropTypes.string,
-	// uid: PropTypes.string,
 	name: PropTypes.string,
 	gender: PropTypes.string,
 	hair_color: PropTypes.string,

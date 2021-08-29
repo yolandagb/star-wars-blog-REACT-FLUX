@@ -15,13 +15,16 @@ const Planets = props => {
 			<div>
 				<div className="jumbotron-fluid mx-5 my-5 d-flex flex-row">
 					<div className="left-side d-inline-block">
-						<img src="https://picsum.photos/600/300?random=2" />
+						<img
+							className="image-fluid"
+							src="https://static.wikia.nocookie.net/lego-dimensions-customs/images/4/46/Mustafar.png/revision/latest?cb=20200528193716"
+						/>
 					</div>
 					<div className="right-side d-inline-block">
 						<h1 className="text-center text-warning" id="name">
 							{store.planetDetails.name}
 						</h1>
-						<h6 className="description mx-5 text-center text-monospace">
+						<h6 className="description mx-5 text-center text-monospace" id="fakeText">
 							{" "}
 							Lucas ipsum dolor sit amet maul grievous mustafar wampa organa yavin organa fett antilles
 							tatooine. Biggs amidala kenobi antilles moff yavin solo darth greedo. Wookiee wicket darth
@@ -33,45 +36,45 @@ const Planets = props => {
 						</h6>
 					</div>
 				</div>
-				<div className="divider bg-danger" />
+				<div className="divider bg-warning" />
 				<br />
 				{store.planetDetails ? (
 					<div className="row d-flex ml-5">
 						<div className="col-2 text" id="characters">
-							Name:
+							<strong>Name:</strong>
 							<br />
 							<br />
 							{store.planetDetails.name}{" "}
 						</div>
 						<div className="col-2 text" id="characters">
-							Climate:
+							<strong>Climate:</strong>
 							<br />
 							<br />
-							{store.planetDetails.name}{" "}
+							{store.planetDetails.climate}{" "}
 						</div>
 						<div className="col-2 text" id="characters">
-							Population:
+							<strong>Population:</strong>
 							<br />
 							<br />
-							{store.planetDetails.name}{" "}
+							{store.planetDetails.population}{" "}
 						</div>
 						<div className="col-2 text" id="characters">
-							Orbital Period:
+							<strong>Orbital Period:</strong>
 							<br />
 							<br />
-							{store.planetDetails.name}
+							{store.planetDetails.orbital_period}
 						</div>
 						<div className="col-2 text" id="characters">
-							Rotation Period:
+							<strong>Rotation Period:</strong>
 							<br />
 							<br />
-							{store.planetDetails.name}
+							{store.planetDetails.rotation_period}
 						</div>
 						<div className="col-2 text" id="characters">
-							Diameter:
+							<strong>Diameter:</strong>
 							<br />
 							<br />
-							{store.planetDetails.name}
+							{store.planetDetails.diameter}
 						</div>
 					</div>
 				) : (

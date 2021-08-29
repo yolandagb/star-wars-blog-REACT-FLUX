@@ -34,8 +34,9 @@ const FavDropdown = props => {
 					<span aria-hidden="true">x</span>
 				</button>
 				<option selected value="0">
-					Favorites
+					Favourites
 				</option>
+				{/* <img className="trash-icon" /> */}
 				{allFavorites}
 			</select>
 		</>

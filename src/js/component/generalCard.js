@@ -8,10 +8,8 @@ import ReactDOM from "react-dom";
 
 const GeneralCard = props => {
 	const { store, actions } = useContext(Context);
-	// let path = "/" + props.resource + "/" + props.id;
 	let imgRandom = Math.floor(Math.random() * 1000 + 1);
-	let pathImg =
-		"https://i0.wp.com/www.cinemundo.net.br/wp-content/uploads/2020/01/LUKE.jpg?fit=1280%2C960&ssl=1" + imgRandom;
+	let pathImg = "https://www.pcworld.es/cmsdata/features/3789766/star_wars_thumb900_1-1.jpg" + imgRandom;
 
 	return (
 		<div className="card">

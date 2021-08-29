@@ -17,7 +17,7 @@ const Characters = props => {
 					<div className="left-side d-inline-block">
 						<img
 							className="image-fluid"
-							src="https://th.bing.com/th/id/R.8d6ceed7c5cfcb4313bbc531b8cca18d?rik=U6N6EzsMRo3Gqg&pid=ImgRaw&r=0"
+							src="https://www.pcworld.es/cmsdata/features/3789766/star_wars_thumb900_1-1.jpg"
 						/>{" "}
 					</div>
 					<div className="right-side d-inline-block">
@@ -46,31 +46,31 @@ const Characters = props => {
 							{store.peopleDetails.name}
 						</div>
 						<div className="col-2 text-warning" id="characters">
-							Birth Year:
+							<strong>Birth Year:</strong>
 							<br />
 							<br />
 							{store.peopleDetails.birth_year}{" "}
 						</div>
 						<div className="col-2 text-warning" id="characters">
-							Gender:
+							<strong>Gender:</strong>
 							<br />
 							<br />
 							{store.peopleDetails.gender}{" "}
 						</div>
 						<div className="col-2 text-warning" id="characters">
-							Height:
+							<strong>Height:</strong>
 							<br />
 							<br />
 							{store.peopleDetails.height}{" "}
 						</div>
 						<div className="col-2 text-warning" id="characters">
-							Skin Color:
+							<strong>Skin Color:</strong>
 							<br />
 							<br />
 							{store.peopleDetails.skin_color}{" "}
 						</div>
 						<div className="col-2 text-warning" id="characters">
-							Eye Color:
+							<strong>Eye Color:</strong>
 							<br />
 							<br />
 							{store.peopleDetails.eye_color}{" "}

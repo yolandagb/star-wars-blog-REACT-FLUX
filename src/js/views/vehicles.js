@@ -13,7 +13,10 @@ const Vehicles = props => {
 		<div>
 			<div className="jumbotron-fluid mx-5 my-5 d-flex flex-row">
 				<div className="left-side d-inline-block">
-					<img src="https://th.bing.com/th/id/OIP.J4Fv4OUAf0EDqp090m1KigHaEK?pid=ImgDet&rs=1" />
+					<img
+						className="image-fluid"
+						src="https://www.denofgeek.com/wp-content/uploads/2016/01/millennium-falcon.jpg"
+					/>
 				</div>
 				<div className="right-side d-inline-block">
 					<h1 className="text-center text-monospace" id="name">
